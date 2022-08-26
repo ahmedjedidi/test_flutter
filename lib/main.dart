@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 void main() {
   runApp(
     GetMaterialApp(
-       navigatorKey: NavigationService.navigatorKey, 
       debugShowCheckedModeBanner: false,
       title: "Application",
       initialRoute: AppPages.INITIAL,
@@ -26,7 +25,3 @@ void main() {
   );
 }
 
-class NavigationService { 
-  static GlobalKey<NavigatorState> navigatorKey = 
-  GlobalKey<NavigatorState>();
-}

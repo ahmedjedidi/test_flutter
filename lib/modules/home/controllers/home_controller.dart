@@ -12,6 +12,5 @@ class HomeController extends GetxController {
   
   navigateToProducts(){
     Get.toNamed(Routes.PRODUCT);
-    print("aa");
   }
 }
