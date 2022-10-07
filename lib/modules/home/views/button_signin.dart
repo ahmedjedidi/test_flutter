@@ -17,6 +17,7 @@ class ButtonSignIn extends StatelessWidget {
             width: double.infinity,
             height: 60,
             child: ElevatedButton(
+              key:Key("LoginButton"),
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -25,7 +26,7 @@ class ButtonSignIn extends StatelessWidget {
               ),
               onPressed: () {controller.navigateToProducts();},
               child: Text(
-                "Sign In",
+                "LoginButton",
                 style: TextStyle(
                   fontSize: 13,
                   color: Get.theme.primaryColor,

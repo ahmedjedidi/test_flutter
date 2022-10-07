@@ -11,6 +11,7 @@ class ProductView extends GetView<ProductController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: Key('ProductView'),
         backgroundColor: Color(0xFFEBEBEB),
         body: SafeArea(
             child: SingleChildScrollView(
@@ -99,7 +100,9 @@ class ProductView extends GetView<ProductController> {
                 childAspectRatio: 130/210,
                 physics: const NeverScrollableScrollPhysics(),
                 children: List.generate(controller.listProduct.length,(index){
-                  return   InkWell(child: CardProduct(controller:controller, index: index,),onTap: (){
+                  return   GestureDetector(
+                   key: (index==1) ? Key('CardProductButton'): null,
+                    child: CardProduct(controller:controller, index: index,),onTap: (){
                             controller.navigateToDetail(index);
                     });
                 }),

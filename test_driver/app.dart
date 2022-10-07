@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertest/main.dart';
+import 'package:flutter_driver/driver_extension.dart';
+import 'package:flutter/widgets.dart';
+import 'package:fluttertest/modules/detailproduct/views/detail_product_view.dart';
 import 'package:fluttertest/routes/app_pages.dart';
 import 'package:get/get.dart';
-import 'package:flutter_driver/driver_extension.dart';
 
-
-void main() {
-    enableFlutterDriverExtension();
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return  GetMaterialApp(
+void main(){
+  enableFlutterDriverExtension();
+  runApp(GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Application",
       initialRoute: AppPages.INITIAL,
@@ -29,7 +25,5 @@ class MyApp extends StatelessWidget {
           elevation: 0.0,
         ),
       ),
-    );
-  }
+    ));
 }
-

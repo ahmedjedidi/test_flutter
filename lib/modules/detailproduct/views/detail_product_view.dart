@@ -5,11 +5,12 @@ import 'package:get/get.dart';
 
 class DetailProductView extends GetView<DetailProductController> {
   DetailProductView({Key? key}) : super(key: key);
-  ProductController productController = Get.find();
+  ProductController productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       key: Key('DetailProductView'),
         backgroundColor: Color(0xFFF6F6F6),
         appBar: AppBar(
           title: Text("Detail Product"),
@@ -99,7 +100,8 @@ class DetailProductView extends GetView<DetailProductController> {
                                 color: Color(0xFFF6F6F6)),
                             child: Row(
                               children: [
-                                InkWell(
+                                GestureDetector(
+                                  key: Key('decrement'),
                                     onTap: () => controller.decrement(),
                                     child: CircleAvatar(
                                         backgroundColor: Colors.black,
@@ -118,13 +120,15 @@ class DetailProductView extends GetView<DetailProductController> {
                                       color: Colors.white),
                                   child: Text(
                                     controller.counter.toString(),
+                                    key: Key('counter'),
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 16),
                                   ),
                                 ),
-                                InkWell(
+                                GestureDetector(
+                                    key: ValueKey('increment'),
                                     onTap: () => controller.increment(),
-                                    child: CircleAvatar(
+                                    child: CircleAvatar(                             
                                         backgroundColor: Colors.black,
                                         radius: 20,
                                         child: Icon(
