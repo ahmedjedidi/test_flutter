@@ -1,7 +1,12 @@
 
 import 'package:fluttertest/data/models/product_model.dart';
 
-class ProductService {
+abstract class  ProductService {
+  Future<List<Product>> getAllProduct();
+}
+
+class ProductServiceImplt extends ProductService {
+  @override
   Future<List<Product>> getAllProduct() async {
   await Future.delayed(const Duration(seconds: 3));
     List<Product> listProducts=[];

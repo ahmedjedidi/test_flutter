@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 class ProductController extends GetxController {
   var tabIndex = 0.obs;
-  final ProductService productService = ProductService();
-  final CategoryService categoryService = CategoryService();
+  final ProductServiceImplt productService = ProductServiceImplt();
+  final CategoryService categoryService = CategoryServiceIpmlt();
   var isLoading = true.obs;
   RxList listCategory = List.empty(growable: true).obs;
   RxList listProduct = List.empty(growable: true).obs;

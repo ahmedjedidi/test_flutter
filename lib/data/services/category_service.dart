@@ -1,6 +1,12 @@
 import 'package:fluttertest/data/models/category_model.dart';
 
-class CategoryService{
+abstract class CategoryService{
+  Future<List<Category>> getAllCategory();
+}
+
+
+class CategoryServiceIpmlt extends CategoryService{
+  @override
   Future<List<Category>> getAllCategory() async {
     await Future.delayed(const Duration(seconds: 3));
     List<Category> listCategory=[];
